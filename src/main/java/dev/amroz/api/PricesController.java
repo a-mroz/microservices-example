@@ -1,7 +1,7 @@
 package dev.amroz.api;
 
 import java.math.BigDecimal;
-import java.util.Map;
+import java.util.List;
 import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
@@ -12,10 +12,10 @@ class PricesController {
 
     @Get
     @Produces(MediaType.APPLICATION_JSON)
-    public Map<String, BigDecimal> prices() {
-        return Map.of(
-            "Moby Dick", BigDecimal.TEN,
-            "The Great Gatsby", BigDecimal.valueOf(15.5)
+    public List<BookPrice> prices() {
+        return List.of(
+            new BookPrice("Moby Dick", BigDecimal.TEN),
+            new BookPrice("The Great Gatsby", BigDecimal.valueOf(15.5))
         );
     }
 }
