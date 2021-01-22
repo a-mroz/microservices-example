@@ -1,5 +1,5 @@
 applicationType: default
-defaultPackage: dev.amroz
+defaultPackage: dev.amroz.microservices.bookshop
 testFramework: junit
 sourceLanguage: java
 buildTool: gradle

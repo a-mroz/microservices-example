@@ -1,4 +1,4 @@
-package dev.amroz.api;
+package dev.amroz.microservices.bookshop.catalog.api;
 
 import java.math.BigDecimal;
 import java.util.List;
