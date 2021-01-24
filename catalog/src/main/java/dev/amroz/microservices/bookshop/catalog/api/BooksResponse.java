@@ -1,15 +1,12 @@
 package dev.amroz.microservices.bookshop.catalog.api;
 
-import java.math.BigDecimal;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-class BookPrice {
+class BooksResponse {
 
     @JsonProperty
-    private final String book;
-
-    @JsonProperty
-    private final BigDecimal price;
+    private final List<BookItem> books;
 }
