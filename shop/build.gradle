@@ -29,7 +29,7 @@ dependencies {
 
 
 application {
-    mainClass.set("dev.amroz.microservices.bookshop.shop.Application")
+    mainClass.set("dev.amroz.microservices.bookshop.shop.ShopApplication")
 }
 
 java {
