@@ -5,6 +5,6 @@ micronaut:
 catalog:
   books:
     retry:
-      attempts: 5
-      multiplier: 1.5
+      attempts: 4
+      multiplier: 1
       delay: 2s
