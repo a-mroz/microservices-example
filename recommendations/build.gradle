@@ -1,9 +1,10 @@
 plugins {
     id("com.github.johnrengelman.shadow") version "6.1.0"
     id("io.micronaut.application") version "1.2.0"
+    id("io.freefair.lombok") version "5.3.0"
 }
 
-version = "0.1"
+version = "0.0.1"
 group = "dev.amroz.microservices.bookshop"
 
 repositories {
@@ -31,12 +32,12 @@ dependencies {
 
 
 application {
-    mainClass.set("dev.amroz.microservices.bookshop.Application")
+    mainClass.set("dev.amroz.microservices.bookshop.recommendations.RecommendationsApplication")
 }
 
 java {
-    sourceCompatibility = JavaVersion.toVersion("1.8")
-    targetCompatibility = JavaVersion.toVersion("1.8")
+    sourceCompatibility = JavaVersion.toVersion("11")
+    targetCompatibility = JavaVersion.toVersion("11")
 }
 
 

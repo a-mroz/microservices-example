@@ -12,10 +12,10 @@ class CatalogController {
 
     @Get
     @Produces(MediaType.APPLICATION_JSON_STREAM)
-    public Flowable<BookItem> books() {
+    Flowable<BookResponse> books() {
         return Flowable.just(
-            new BookItem("Moby Dick", BigDecimal.TEN),
-            new BookItem("The Great Gatsby", BigDecimal.valueOf(15.5))
+            new BookResponse("Moby Dick", BigDecimal.TEN),
+            new BookResponse("The Great Gatsby", BigDecimal.valueOf(15.5))
         );
     }
 }
