@@ -11,6 +11,9 @@ class IndexResponse {
     @JsonProperty
     private final List<CatalogItem> availableBooks;
 
+    @JsonProperty
+    private final List<RecommendationItem> recommendations;
+
     @Builder
     static class CatalogItem {
         @JsonProperty
@@ -19,4 +22,13 @@ class IndexResponse {
         @JsonProperty
         private final BigDecimal price;
     }
+
+    @Builder
+    static class RecommendationItem {
+
+        @JsonProperty
+        private final String title;
+    }
+
+
 }

@@ -15,4 +15,8 @@
 
     <logger name="dev.amroz.microservices.bookshop.shop" level="DEBUG"/>
 
+    <!--<logger name="io.micronaut.http.client" level="TRACE"/>-->
+
+    <logger name="io.micronaut.retry" level="DEBUG"/>
+
 </configuration>
