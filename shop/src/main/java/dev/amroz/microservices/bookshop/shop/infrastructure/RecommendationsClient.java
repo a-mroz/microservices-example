@@ -15,6 +15,7 @@ public interface RecommendationsClient extends RecommendationsService {
     @Override
     @Get("/recommendations")
     @Consumes(MediaType.APPLICATION_JSON_STREAM)
-    @CircuitBreaker(reset = "60s")
+    // TODO check why it's not included by default
+    @CircuitBreaker(/*includes = {io.micronaut.http.client.exceptions.HttpClientException.class}*/)
     Flowable<RecommendationItem> getRecommendations();
 }
