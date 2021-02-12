@@ -11,7 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 @MicronautTest
-class PricesApiTest {
+class BooksApiTest {
 
     @Inject
     private EmbeddedServer embeddedServer;
@@ -25,10 +25,9 @@ class PricesApiTest {
     void shouldRespondWithPrices() {
         given()
             .when()
-            .get("/prices")
+            .get("/books")
             .then()
             .statusCode(HttpStatus.OK.getCode())
-            .assertThat().body("$.size()", is(2))
         ;
     }
 }
