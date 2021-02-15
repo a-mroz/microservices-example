@@ -9,13 +9,13 @@ import io.micronaut.http.client.annotation.Client;
 import io.micronaut.retry.annotation.CircuitBreaker;
 import io.reactivex.Flowable;
 
-@Client("http://localhost:8082")
-public interface RecommendationsClient extends RecommendationsService {
+@Client(id="recommendations")
+interface RecommendationsClient extends RecommendationsService {
 
     @Override
     @Get("/recommendations")
     @Consumes(MediaType.APPLICATION_JSON_STREAM)
-    // TODO check why it's not included by default
+    // TODO check why it's not included by default - https://github.com/micronaut-projects/micronaut-core/issues/4927
     @CircuitBreaker(/*includes = {io.micronaut.http.client.exceptions.HttpClientException.class}*/)
     Flowable<RecommendationItem> getRecommendations();
 }

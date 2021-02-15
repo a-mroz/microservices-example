@@ -9,7 +9,7 @@ import io.micronaut.http.client.annotation.Client;
 import io.micronaut.retry.annotation.Retryable;
 import io.reactivex.Flowable;
 
-@Client("http://localhost:8081")
+@Client(id="catalog")
 interface CatalogClient extends CatalogService {
 
     @Retryable(

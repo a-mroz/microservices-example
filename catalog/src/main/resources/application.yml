@@ -1,6 +1,9 @@
 micronaut:
   application:
     name: catalog
+    instance:
+      # required if running multiple instances, for collisions avoidance
+      id: ${random.shortuuid}
   server:
     port: 8081
 
@@ -10,3 +13,8 @@ micronaut:
         paths: classpath:META-INF/swagger
         mapping: /swagger/**
 
+consul:
+  client:
+    registration:
+      enabled: true
+    defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"

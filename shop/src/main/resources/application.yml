@@ -1,6 +1,9 @@
 micronaut:
   application:
     name: shop
+  instance:
+    # required if running multiple instances, for collisions avoidance
+    id: ${random.shortuuid}
 
   router:
     static-resources:
@@ -8,6 +11,11 @@ micronaut:
         paths: classpath:META-INF/swagger
         mapping: /swagger/**
 
+consul:
+  client:
+    registration:
+      enabled: true
+    defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"
 
 catalog:
   books:
