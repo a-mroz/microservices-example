@@ -6,9 +6,9 @@ import io.swagger.v3.oas.annotations.info.Info;
 
 @OpenAPIDefinition(
     info = @Info(
-        title = "Catalog Application",
-        version = "0.0.1",
-        description = "Microservice responsible for serving catalog data."
+        title = "${openapi.title}",
+        version = "${api.version}",
+        description = "${openapi.description}"
     )
 )
 public class CatalogApplication {

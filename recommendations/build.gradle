@@ -22,12 +22,17 @@ micronaut {
 }
 
 dependencies {
-    annotationProcessor("io.micronaut.openapi:micronaut-openapi")
+
+    /*Micronaut*/
     implementation("io.micronaut:micronaut-validation")
     implementation("io.micronaut:micronaut-runtime")
     implementation("io.micronaut:micronaut-http-client")
-    implementation("io.swagger.core.v3:swagger-annotations")
     implementation("io.micronaut:micronaut-discovery-client")
+
+    /*OpenAPI*/
+    annotationProcessor("io.micronaut.openapi:micronaut-openapi")
+    implementation("io.swagger.core.v3:swagger-annotations")
+
     runtimeOnly("ch.qos.logback:logback-classic")
 }
 
