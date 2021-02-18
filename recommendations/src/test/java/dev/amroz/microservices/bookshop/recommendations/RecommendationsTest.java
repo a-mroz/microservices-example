@@ -1,4 +1,4 @@
-package dev.amroz.microservices.bookshop;
+package dev.amroz.microservices.bookshop.recommendations;
 
 import io.micronaut.runtime.EmbeddedApplication;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
