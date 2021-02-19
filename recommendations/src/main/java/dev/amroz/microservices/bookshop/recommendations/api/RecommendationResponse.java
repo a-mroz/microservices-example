@@ -16,6 +16,4 @@ class RecommendationResponse {
     /*public*/ String getTitle() {
         return title;
     }
-
-
 }

@@ -20,6 +20,14 @@ micronaut:
         paths: classpath:META-INF/swagger/views/rapidoc
         mapping: /rapidoc/**
 
+tracing:
+  zipkin:
+    enabled: true
+    http:
+      url: http://localhost:9411/
+    sampler:
+      probability: 1
+
 consul:
   client:
     registration:

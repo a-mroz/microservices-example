@@ -6,6 +6,7 @@ import dev.amroz.microservices.bookshop.shop.services.CatalogService;
 import dev.amroz.microservices.bookshop.shop.services.RecommendationsService;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
+import io.micronaut.tracing.annotation.NewSpan;
 import io.reactivex.Single;
 
 @Controller("/")
@@ -27,6 +28,7 @@ class IndexController {
         this.recommendationsService = recommendationsService;
     }
 
+    @NewSpan("index")
     @Get
     IndexResponse index() {
         Single<List<IndexResponse.CatalogItem>> availableBooks = fetchAvailableBooks();
