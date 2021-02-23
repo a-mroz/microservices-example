@@ -7,6 +7,7 @@ import dev.amroz.microservices.bookshop.shop.services.RecommendationsService;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import io.micronaut.tracing.annotation.NewSpan;
+import io.reactivex.Flowable;
 import io.reactivex.Single;
 
 @Controller("/")
@@ -30,14 +31,9 @@ class IndexController {
 
     @NewSpan("index")
     @Get
-    IndexResponse index() {
-        Single<List<IndexResponse.CatalogItem>> availableBooks = fetchAvailableBooks();
-        Single<List<IndexResponse.RecommendationItem>> recommendations = fetchRecommendations();
-
-        return IndexResponse.builder()
-            .availableBooks(availableBooks.blockingGet())
-            .recommendations(recommendations.blockingGet())
-            .build();
+    Single<IndexResponse> index() {
+        return fetchAvailableBooks()
+            .zipWith(fetchRecommendations(), IndexResponse::new);
     }
 
     private Single<List<IndexResponse.CatalogItem>> fetchAvailableBooks() {
