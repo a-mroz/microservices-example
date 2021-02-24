@@ -22,7 +22,12 @@ micronaut {
 }
 
 dependencies {
-    testImplementation 'io.rest-assured:rest-assured:4.3.3'
+
+    /* Lombok - MUST be before Micronaut */
+    compileOnly('org.projectlombok:lombok:1.18.16')
+    annotationProcessor('org.projectlombok:lombok:1.18.16')
+    testCompileOnly('org.projectlombok:lombok:1.18.16')
+    testAnnotationProcessor('org.projectlombok:lombok:1.18.16')
 
     /* Micronaut */
     implementation("io.micronaut:micronaut-validation")
@@ -42,6 +47,9 @@ dependencies {
 
     /* Logs */
     runtimeOnly("ch.qos.logback:logback-classic")
+
+    /*Tests*/
+    testImplementation 'io.rest-assured:rest-assured:4.3.3'
 }
 
 
