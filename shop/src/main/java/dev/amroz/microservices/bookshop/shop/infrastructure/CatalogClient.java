@@ -10,7 +10,8 @@ import io.micronaut.retry.annotation.Retryable;
 import io.reactivex.Flowable;
 
 @Client(id="catalog")
-interface CatalogClient extends CatalogService {
+// unfortunately it needs to be public for Micronaut to handle it
+public interface CatalogClient extends CatalogService {
 
     @Retryable(
         attempts = "${catalog.books.retry.attempts:3}",

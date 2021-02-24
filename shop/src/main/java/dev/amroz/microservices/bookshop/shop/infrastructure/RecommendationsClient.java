@@ -10,7 +10,8 @@ import io.micronaut.retry.annotation.CircuitBreaker;
 import io.reactivex.Flowable;
 
 @Client(id="recommendations")
-interface RecommendationsClient extends RecommendationsService {
+// unfortunately it needs to be public for Micronaut to handle it
+public interface RecommendationsClient extends RecommendationsService {
 
     @Override
     @Get("/recommendations")
