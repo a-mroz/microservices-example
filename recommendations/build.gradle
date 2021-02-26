@@ -44,7 +44,11 @@ dependencies {
     runtime('io.zipkin.reporter2:zipkin-reporter')
     compile('io.opentracing.brave:brave-opentracing')
 
+    /* Logs */
     runtimeOnly("ch.qos.logback:logback-classic")
+
+    /* Test stuff */
+    testCompile("org.assertj:assertj-core:3.11.1")
 }
 
 

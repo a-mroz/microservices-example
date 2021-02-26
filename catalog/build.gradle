@@ -49,7 +49,8 @@ dependencies {
     runtimeOnly("ch.qos.logback:logback-classic")
 
     /*Tests*/
-    testImplementation 'io.rest-assured:rest-assured:4.3.3'
+    testImplementation('io.rest-assured:rest-assured:4.3.3')
+    testCompile("org.assertj:assertj-core:3.11.1")
 }
 
 

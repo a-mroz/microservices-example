@@ -1,11 +1,10 @@
-package dev.amroz.microservices.bookshop;
-
-import io.micronaut.runtime.EmbeddedApplication;
-import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions;
+package dev.amroz.microservices.bookshop.shop;
 
 import javax.inject.Inject;
+import io.micronaut.runtime.EmbeddedApplication;
+import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 @MicronautTest
 public class ShopTest {
