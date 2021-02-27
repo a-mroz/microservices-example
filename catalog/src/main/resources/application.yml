@@ -36,3 +36,7 @@ tracing:
         - "http://${ZIPKIN_HOST:localhost}:${ZIPKIN_PORT:9411}"
     sampler:
       probability: 1
+
+kafka:
+  bootstrap:
+    servers: localhost:9092
