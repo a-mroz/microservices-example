@@ -35,7 +35,8 @@ dependencies {
     implementation("io.micronaut:micronaut-discovery-client")
     implementation("io.micronaut:micronaut-tracing")
     implementation("io.micronaut.kafka:micronaut-kafka")
-
+    implementation("io.micronaut:micronaut-management")
+    
     /* OpenAPI */
     annotationProcessor("io.micronaut.openapi:micronaut-openapi:2.3.1")
     implementation("io.swagger.core.v3:swagger-annotations")
