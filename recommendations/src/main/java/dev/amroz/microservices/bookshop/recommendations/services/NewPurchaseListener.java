@@ -9,7 +9,7 @@ import io.micronaut.configuration.kafka.annotation.Topic;
 public class NewPurchaseListener {
 
     @Topic("purchases")
-    public void receive(@KafkaKey String book) {
-        System.out.println("New purchase for recommendations " + book);
+    public void receive(@KafkaKey String book, int quantity) {
+        System.out.println("New purchase for recommendations " + book + " " + quantity);
     }
 }
