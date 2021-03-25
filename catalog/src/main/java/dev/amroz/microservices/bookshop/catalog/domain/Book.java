@@ -5,6 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 import java.util.UUID;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -24,4 +25,19 @@ public class Book {
 
     @Basic
     private String title;
+
+    @Basic
+    private BigDecimal price;
+
+    public String title() {
+        return title;
+    }
+
+    public BigDecimal price() {
+        return price;
+    }
+
+
+
+
 }

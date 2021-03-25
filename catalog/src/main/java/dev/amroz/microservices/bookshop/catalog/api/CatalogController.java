@@ -1,6 +1,7 @@
 package dev.amroz.microservices.bookshop.catalog.api;
 
-import java.math.BigDecimal;
+import javax.inject.Inject;
+import dev.amroz.microservices.bookshop.catalog.service.ListBooksService;
 import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
@@ -11,13 +12,19 @@ import io.reactivex.Flowable;
 @Controller("/books")
 class CatalogController {
 
+    private final ListBooksService listBooksService;
+
+    @Inject
+    CatalogController(
+        ListBooksService listBooksService) {
+        this.listBooksService = listBooksService;
+    }
+
     @ContinueSpan
     @Get
     @Produces(MediaType.APPLICATION_JSON_STREAM)
     Flowable<BookResponse> books() {
-        return Flowable.just(
-            new BookResponse("Moby Dick", BigDecimal.TEN),
-            new BookResponse("The Great Gatsby", BigDecimal.valueOf(15.5))
-        );
+        return listBooksService.listBooks()
+            .map(book -> new BookResponse(book.title(), book.price()));
     }
 }
